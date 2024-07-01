@@ -5,7 +5,8 @@ import RegisterScreen from './components/RegisterScreen';
 import SignUpScreen from './components/SignUpScreen';
 import LoginScreen from './components/LoginScreen';
 import ForgotPasswordScreen from './components/ForgotPasswordScreen';
-import Dashboard from './components/Dashboard'; // Tambahkan impor ini
+import Dashboard from './components/Dashboard';
+import SearchPage from './components/SearchPage';
 import './App.css';
 
 const App: React.FC = () => {
@@ -16,11 +17,12 @@ const App: React.FC = () => {
         <Route path="/signup" element={<SignUpScreen />} />
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
-        <Route path="/dashboard" element={<Dashboard />} /> {/* Tambahkan rute ini */}
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/search" element={<SearchPage />} />
         <Route path="/" element={<WelcomeScreen />} />
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;

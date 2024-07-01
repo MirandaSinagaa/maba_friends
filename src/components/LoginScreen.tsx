@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { FaEnvelope, FaLock } from 'react-icons/fa';
+import { FaEnvelope, FaLock, FaGoogle } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { auth } from '../firebase'; // Impor konfigurasi Firebase
 
 const LoginScreen: React.FC = () => {
@@ -19,6 +19,18 @@ const LoginScreen: React.FC = () => {
     } catch (error) {
       setError((error as Error).message);
       console.error('Error logging in:', error);
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      const result = await signInWithPopup(auth, provider);
+      console.log('Google user logged in:', result.user);
+      navigate('/dashboard'); // Redirect ke halaman dashboard setelah login sukses
+    } catch (error) {
+      setError((error as Error).message);
+      console.error('Error logging in with Google:', error);
     }
   };
 
@@ -70,6 +82,14 @@ const LoginScreen: React.FC = () => {
           </button>
         </div>
       </form>
+      <div className="flex flex-col items-center mt-6">
+        <button
+          className="flex items-center bg-white text-black py-2 px-4 rounded-full shadow-lg hover:bg-gray-200 transition-all duration-200"
+          onClick={handleGoogleLogin}
+        >
+          <FaGoogle className="mr-2" /> Login dengan Google
+        </button>
+      </div>
       <div className="absolute bottom-4 text-center text-xs text-white">
         Dengan masuk atau membuat akun, Anda setuju dengan kami <br />
         <span className="underline">Syarat dan Ketentuan</span> dan <span className="underline">Pernyataan Privasi</span>
