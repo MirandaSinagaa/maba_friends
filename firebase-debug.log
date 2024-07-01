@@ -1,0 +1,21 @@
+[debug] [2024-07-01T06:06:53.492Z] ----------------------------------------------------------------------
+[debug] [2024-07-01T06:06:53.497Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Miranda Sinaga\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-07-01T06:06:53.498Z] CLI Version:   13.12.0
+[debug] [2024-07-01T06:06:53.498Z] Platform:      win32
+[debug] [2024-07-01T06:06:53.498Z] Node Version:  v20.15.0
+[debug] [2024-07-01T06:06:53.499Z] Time:          Mon Jul 01 2024 14:06:53 GMT+0800 (Central Indonesia Time)
+[debug] [2024-07-01T06:06:53.499Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-07-01T06:06:53.517Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-07-01T06:06:53.517Z] > authorizing via signed-in user (mirandasinaga0803@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Miranda Sinaga\Documents\SEMESTER 2\Praktikum Basis Data\WebApp\maba_friends
+
