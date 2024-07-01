@@ -53,11 +53,17 @@ const Dashboard: React.FC = () => {
               <img src={universityIcon} alt="University Icon" className="w-6 h-6 mr-2" />
               Cari Kampus
             </button>
-            <button className="w-full bg-accentColor text-white py-3 rounded-full shadow-md hover:bg-accentColor-dark transition-all duration-200 text-left px-4 flex items-center">
+            <button
+              onClick={() => navigate('/career-test')}
+              className="w-full bg-accentColor text-white py-3 rounded-full shadow-md hover:bg-accentColor-dark transition-all duration-200 text-left px-4 flex items-center"
+            >
               <img src={testIcon} alt="Test Icon" className="w-6 h-6 mr-2" />
               Tes Penjurusan
             </button>
-            <button className="w-full bg-accentColor text-white py-3 rounded-full shadow-md hover:bg-accentColor-dark transition-all duration-200 text-left px-4 flex items-center">
+            <button
+              onClick={() => navigate('/compare-majors')}
+              className="w-full bg-accentColor text-white py-3 rounded-full shadow-md hover:bg-accentColor-dark transition-all duration-200 text-left px-4 flex items-center"
+            >
               <img src={compareIcon} alt="Compare Icon" className="w-6 h-6 mr-2" />
               Banding Jurusan
             </button>
