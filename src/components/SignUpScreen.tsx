@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { FaUser, FaEnvelope, FaPhone, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import { FaUser, FaEnvelope, FaPhone, FaLock } from 'react-icons/fa';
-import { auth, db } from '../firebase'; // Impor konfigurasi Firebase
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth, db } from '../firebase'; // Import Firebase configuration
 import { doc, setDoc } from 'firebase/firestore';
 
 const SignUpScreen: React.FC = () => {
@@ -12,6 +12,8 @@ const SignUpScreen: React.FC = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [fullName, setFullName] = useState('');
   const [phone, setPhone] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [error, setError] = useState('');
 
   const handleRegister = async (e: React.FormEvent) => {
@@ -37,12 +39,20 @@ const SignUpScreen: React.FC = () => {
     }
   };
 
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleShowConfirmPassword = () => {
+    setShowConfirmPassword(!showConfirmPassword);
+  };
+
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-blue-600 text-white p-4">
-      <h1 className="text-2xl font-bold mb-8">Daftar Akun</h1>
+    <div className="font-roboto min-h-screen flex flex-col items-center justify-center bg-[#0B1E33] text-white p-4">
+      <h1 className="text-4xl font-righteous mb-10">Daftar Akun</h1>
       <form className="w-full max-w-xs space-y-4" onSubmit={handleRegister}>
         <div className="flex items-center bg-white rounded-full px-3 py-2 shadow-md">
-          <FaUser className="text-orange-500 mr-3" />
+          <FaUser className="text-[#F5A201] mr-3" />
           <input
             type="text"
             placeholder="Nama Lengkap"
@@ -52,7 +62,7 @@ const SignUpScreen: React.FC = () => {
           />
         </div>
         <div className="flex items-center bg-white rounded-full px-3 py-2 shadow-md">
-          <FaEnvelope className="text-orange-500 mr-3" />
+          <FaEnvelope className="text-[#F5A201] mr-3" />
           <input
             type="email"
             placeholder="Email ID"
@@ -62,7 +72,7 @@ const SignUpScreen: React.FC = () => {
           />
         </div>
         <div className="flex items-center bg-white rounded-full px-3 py-2 shadow-md">
-          <FaPhone className="text-orange-500 mr-3" />
+          <FaPhone className="text-[#F5A201] mr-3" />
           <input
             type="text"
             placeholder="No. Hp"
@@ -72,35 +82,41 @@ const SignUpScreen: React.FC = () => {
           />
         </div>
         <div className="flex items-center bg-white rounded-full px-3 py-2 shadow-md">
-          <FaLock className="text-orange-500 mr-3" />
+          <FaLock className="text-[#F5A201] mr-3" />
           <input
-            type="password"
+            type={showPassword ? 'text' : 'password'}
             placeholder="Kata Sandi"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="flex-grow text-black outline-none"
           />
+          <button type="button" onClick={toggleShowPassword} className="focus:outline-none">
+            {showPassword ? <FaEyeSlash className="text-[#F5A201]" /> : <FaEye className="text-[#F5A201]" />}
+          </button>
         </div>
         <div className="flex items-center bg-white rounded-full px-3 py-2 shadow-md">
-          <FaLock className="text-orange-500 mr-3" />
+          <FaLock className="text-[#F5A201] mr-3" />
           <input
-            type="password"
+            type={showConfirmPassword ? 'text' : 'password'}
             placeholder="Konfirmasi Kata Sandi"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             className="flex-grow text-black outline-none"
           />
+          <button type="button" onClick={toggleShowConfirmPassword} className="focus:outline-none">
+            {showConfirmPassword ? <FaEyeSlash className="text-[#F5A201]" /> : <FaEye className="text-[#F5A201]" />}
+          </button>
         </div>
         {error && <p className="text-red-500 text-xs">{error}</p>}
         <div className="flex items-center space-x-2 text-xs mt-4">
-          <input type="checkbox" id="terms" className="form-checkbox text-orange-500" />
+          <input type="checkbox" id="terms" className="form-checkbox text-[#F5A201]" />
           <label htmlFor="terms" className="text-white">
             Saya menyetujui Segala Ketentuan dan kebijakan keamanan yang berlaku
           </label>
         </div>
         <button
           type="submit"
-          className="w-full bg-orange-500 text-white py-2 px-4 rounded-full shadow-lg hover:bg-orange-600 mt-4"
+          className="w-full bg-[#F5A201] text-[#0B1E33] py-2 px-4 rounded-full shadow-lg mt-4 transform transition duration-300 hover:scale-105"
         >
           Daftar Sekarang
         </button>
@@ -108,7 +124,7 @@ const SignUpScreen: React.FC = () => {
           Sudah Punya Akun?{' '}
           <button
             type="button"
-            className="text-orange-500 underline"
+            className="text-[#F5A201] underline"
             onClick={() => navigate('/login')}
           >
             Masuk

@@ -15,10 +15,6 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
-        console.log("Current User:", currentUser);
-        console.log("User Photo URL:", currentUser.photoURL);
-
-        // Jika login menggunakan Google, gunakan data dari currentUser
         setUser({
           fullName: currentUser.displayName || 'Username',
           photoURL: currentUser.photoURL || logo,
@@ -32,56 +28,56 @@ const Dashboard: React.FC = () => {
   }, [navigate]);
 
   return (
-    <div className="flex min-h-screen bg-backgroundColor">
+    <div className="flex min-h-screen bg-gradient-to-r from-[#0B1E33] to-[#013C58] text-[#F5A201]">
       <Sidebar user={user} />
       <main className="flex-1 p-6">
         <div className="max-w-4xl mx-auto">
-          <div className="flex items-center space-x-4 p-6 bg-primaryColor rounded-lg shadow-lg text-white">
-            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
+          <div className="flex items-center space-x-4 p-6 bg-[#0B1E33] rounded-lg shadow-lg text-[#FFFFFF]">
+            <div className="w-16 h-16 bg-[#FFFFFF] rounded-full flex items-center justify-center">
               <img src={user?.photoURL} alt="User Avatar" className="rounded-full" />
             </div>
             <div>
-              <h2 className="text-xl font-bold">{user?.fullName || 'Username'}</h2>
-              <p className="text-sm">Mau Tahu Apa Tentang Kampus?</p>
+              <h2 className="text-xl font-georgia">{user?.fullName || 'Username'}</h2>
+              <p className="text-xs font-roboto">Mau Tahu Apa Tentang Kampus?</p>
             </div>
           </div>
           <div className="mt-8 space-y-4">
             <button
               onClick={() => navigate('/search')}
-              className="w-full bg-accentColor text-white py-3 rounded-full shadow-md hover:bg-accentColor-dark transition-all duration-200 text-left px-4 flex items-center"
+              className="font-roboto w-full bg-[#00537A] text-[#FFFFFF] py-3 rounded-full shadow-md hover:bg-[#0F172A] transition-all duration-200 text-left px-4 flex items-center transform hover:scale-105"
             >
               <img src={universityIcon} alt="University Icon" className="w-6 h-6 mr-2" />
               Cari Kampus
             </button>
             <button
               onClick={() => navigate('/career-test')}
-              className="w-full bg-accentColor text-white py-3 rounded-full shadow-md hover:bg-accentColor-dark transition-all duration-200 text-left px-4 flex items-center"
+              className="font-roboto w-full bg-[#00537A] text-[#FFFFFF] py-3 rounded-full shadow-md hover:bg-[#0F172A] transition-all duration-200 text-left px-4 flex items-center transform hover:scale-105"
             >
               <img src={testIcon} alt="Test Icon" className="w-6 h-6 mr-2" />
               Tes Penjurusan
             </button>
             <button
               onClick={() => navigate('/compare-majors')}
-              className="w-full bg-accentColor text-white py-3 rounded-full shadow-md hover:bg-accentColor-dark transition-all duration-200 text-left px-4 flex items-center"
+              className="font-roboto w-full bg-[#00537A] text-[#FFFFFF] py-3 rounded-full shadow-md hover:bg-[#0F172A] transition-all duration-200 text-left px-4 flex items-center transform hover:scale-105"
             >
               <img src={compareIcon} alt="Compare Icon" className="w-6 h-6 mr-2" />
               Banding Jurusan
             </button>
           </div>
           <div className="mt-8">
-            <h3 className="text-lg font-bold text-accentColor">BERITA TERKINI KAMPUS</h3>
-            <p className="text-sm text-textColor">Cari Informasi kampus dan jurusan Impianmu!</p>
+            <h3 className="text-lg font-akhsar text-[#F5A201]">BERITA TERKINI KAMPUS</h3>
+            <p className="font-roboto text-xs text-[#FFBA42]">Cari Informasi kampus dan jurusan Impianmu!</p>
           </div>
-          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <div className="bg-white text-black p-4 rounded-lg shadow-md">
+          <div className="font-roboto mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="bg-[#013C58] text-[#FFFFFF] p-4 rounded-lg shadow-md transform hover:scale-105 transition-all duration-300">
               <h4 className="font-bold">Berita Kampus 1</h4>
               <p>Deskripsi berita kampus 1...</p>
             </div>
-            <div className="bg-white text-black p-4 rounded-lg shadow-md">
+            <div className="bg-[#013C58] text-[#FFFFFF] p-4 rounded-lg shadow-md transform hover:scale-105 transition-all duration-300">
               <h4 className="font-bold">Berita Kampus 2</h4>
               <p>Deskripsi berita kampus 2...</p>
             </div>
-            <div className="bg-white text-black p-4 rounded-lg shadow-md">
+            <div className="bg-[#013C58] text-[#FFFFFF] p-4 rounded-lg shadow-md transform hover:scale-105 transition-all duration-300">
               <h4 className="font-bold">Berita Kampus 3</h4>
               <p>Deskripsi berita kampus 3...</p>
             </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+// import './assets/main.css'; // Pastikan path sesuai dengan lokasi file CSS Anda
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';

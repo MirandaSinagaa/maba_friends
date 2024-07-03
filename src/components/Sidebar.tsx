@@ -15,27 +15,27 @@ const Sidebar: React.FC<{ user: any }> = ({ user }) => {
   };
 
   return (
-    <aside className="w-70 bg-primaryColor text-white flex flex-col justify-between p-4 shadow-lg">
+    <aside className="w-70 bg-gradient-to-br from-[#0B1E33] to-[#013C58] text-[#FFFFFF] flex flex-col justify-between p-4 shadow-lg">
       <div>
         <div className="flex items-center space-x-4 p-4">
-        <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center overflow-hidden">
-  <img src={logo} alt="WebApp Logo" className="h-full w-full object-cover" />
-</div>
+          <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
+            <img src={logo} alt="WebApp Logo" className="h-full w-full object-cover" />
+          </div>
           <span className="text-2xl font-bold">Teman Maba</span>
         </div>
         <nav className="mt-8 space-y-4">
           <button
             onClick={() => navigate('/dashboard')}
-            className={`w-full flex items-center p-3 rounded-lg hover:bg-secondaryColor transition-all duration-200 ${
-              location.pathname === '/dashboard' ? 'bg-secondaryColor' : ''
+            className={`font-roboto w-full flex items-center p-3 rounded-lg hover:bg-[#013C58] transition-all duration-200 ${
+              location.pathname === '/dashboard' ? 'bg-[#013C58]' : ''
             }`}
           >
             <FaHome className="mr-2" /> Home
           </button>
           <button
             onClick={() => navigate('/search')}
-            className={`w-full flex items-center p-3 rounded-lg hover:bg-secondaryColor transition-all duration-200 ${
-              location.pathname === '/search' ? 'bg-secondaryColor' : ''
+            className={`font-roboto w-full flex items-center p-3 rounded-lg hover:bg-[#013C58] transition-all duration-200 ${
+              location.pathname === '/search' ? 'bg-[#013C58]' : ''
             }`}
           >
             <FaSearch className="mr-2" /> Search
@@ -45,7 +45,7 @@ const Sidebar: React.FC<{ user: any }> = ({ user }) => {
       <div>
         <button
           onClick={handleLogout}
-          className={`w-full flex items-center p-3 rounded-lg hover:bg-secondaryColor transition-all duration-200`}
+          className="font-roboto w-full flex items-center p-3 rounded-lg hover:bg-[#013C58] transition-all duration-200"
         >
           <FaSignOutAlt className="mr-2" /> Logout
         </button>

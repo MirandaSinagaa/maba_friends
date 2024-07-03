@@ -14,6 +14,7 @@ import undiksha from '../assets/undiksha.png';
 
 const SearchPage: React.FC = () => {
   const [user, setUser] = useState<any>(null);
+  const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -50,27 +51,33 @@ const SearchPage: React.FC = () => {
     { name: 'UNIVERSITAS BRAWIJAYA', img: ub, url: 'https://www.ub.ac.id/' },
   ];
 
+  const filteredUniversities = universities.filter((univ) =>
+    univ.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <div className="flex min-h-screen bg-backgroundColor">
+    <div className="flex min-h-screen bg-gradient-to-r from-[#0B1E33] to-[#013C58] text-[#F5A201]">
       <Sidebar user={user} />
       <main className="flex-1 p-6">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-primaryColor text-white p-4 rounded-lg shadow-lg">
-            <h1 className="text-xl font-bold">Cari Kampus</h1>
+          <div className="bg-[#00537A] text-[#FFFFFF] p-4 rounded-lg shadow-lg">
+            <h1 className="text-xl font-akshar">Cari Kampus</h1>
           </div>
           <div className="p-4">
             <div className="relative mb-4">
-              <FaSearch className="absolute top-3 left-3 text-gray-400" />
+              <FaSearch className="absolute top-3 left-3 text-[#000000]" />
               <input
                 type="text"
                 placeholder="Cari kampus impian kamu"
-                className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none"
+                className="font-roboto w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none bg-white text-[#0B1E33] placeholder-[#000000] border-[#FFFFFF]"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {universities.map((univ) => (
+              {filteredUniversities.map((univ) => (
                 <a key={univ.name} href={univ.url} target="_blank" rel="noopener noreferrer" className="block">
-                  <div className="bg-white rounded-lg overflow-hidden shadow-md">
+                  <div className="bg-[#0B1E33] rounded-lg overflow-hidden shadow-md">
                     <img src={univ.img} alt={univ.name} className="w-full h-60 object-cover" />
                   </div>
                 </a>
