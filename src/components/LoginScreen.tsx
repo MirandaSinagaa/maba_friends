@@ -69,7 +69,7 @@ const LoginScreen: React.FC = () => {
         {error && <p className="text-red-500 text-xs">{error}</p>}
         <button
           type="submit"
-          className="font-roboto w-full bg-[#F5A201] text-white py-2 px-4 rounded-full shadow-lg mt-4 transition-all duration-300 transform hover:scale-105"
+          className="font-roboto w-full bg-[#F5A201] text-[#0B1E33] py-2 px-4 rounded-full shadow-lg mb-4 transition-all duration-300 transform hover:scale-105"
         >
           Masuk
         </button>
@@ -92,7 +92,7 @@ const LoginScreen: React.FC = () => {
       </form>
       <div className="flex flex-col items-center mt-6">
         <button
-          className="font-roboto flex items-center bg-white text-black py-2 px-4 rounded-full shadow-lg hover:bg-gray-600 transition-all duration-200"
+          className="font-roboto flex items-center bg-white text-black py-2 px-4 rounded-full shadow-lg hover:bg-gray-600 transition-all duration-200 transform hover:scale-105"
           onClick={handleGoogleLogin}
         >
           <FaGoogle className="mr-2" /> Login dengan Google
