@@ -76,7 +76,13 @@ const SearchPage: React.FC = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {filteredUniversities.map((univ) => (
-                <a key={univ.name} href={univ.url} target="_blank" rel="noopener noreferrer" className="block">
+                <a
+                  key={univ.name}
+                  href={univ.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block transform transition-transform duration-300 hover:scale-105"
+                >
                   <div className="bg-[#0B1E33] rounded-lg overflow-hidden shadow-md">
                     <img src={univ.img} alt={univ.name} className="w-full h-60 object-cover" />
                   </div>
