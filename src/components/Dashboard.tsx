@@ -37,35 +37,35 @@ const Dashboard: React.FC = () => {
               <img src={user?.photoURL} alt="User Avatar" className="rounded-full" />
             </div>
             <div>
-              <h2 className="text-xl font-georgia">{user?.fullName || 'Username'}</h2>
-              <p className="text-xs font-roboto">Mau Tahu Apa Tentang Kampus?</p>
+              <h2 className="text-xl font-roboto font-bold">{user?.fullName || 'Username'}</h2>
+              <p className="text-xs font-roboto font-bold">Mau tahu apa tentang kampus?</p>
             </div>
           </div>
           <div className="mt-8 space-y-4">
             <button
               onClick={() => navigate('/search')}
-              className="font-roboto w-full bg-[#00537A] text-[#FFFFFF] py-3 rounded-full shadow-md hover:bg-[#0F172A] transition-all duration-200 text-left px-4 flex items-center transform hover:scale-105"
+              className="font-bold font-roboto w-full bg-[#00537A] text-[#FFFFFF] py-3 rounded-full shadow-md hover:bg-[#0F172A] transition-all duration-200 text-left px-4 flex items-center transform hover:scale-105"
             >
               <img src={universityIcon} alt="University Icon" className="w-6 h-6 mr-2" />
               Cari Kampus
             </button>
             <button
               onClick={() => navigate('/career-test')}
-              className="font-roboto w-full bg-[#00537A] text-[#FFFFFF] py-3 rounded-full shadow-md hover:bg-[#0F172A] transition-all duration-200 text-left px-4 flex items-center transform hover:scale-105"
+              className="font-bold font-roboto w-full bg-[#00537A] text-[#FFFFFF] py-3 rounded-full shadow-md hover:bg-[#0F172A] transition-all duration-200 text-left px-4 flex items-center transform hover:scale-105"
             >
               <img src={testIcon} alt="Test Icon" className="w-6 h-6 mr-2" />
               Tes Penjurusan
             </button>
             <button
               onClick={() => navigate('/compare-majors')}
-              className="font-roboto w-full bg-[#00537A] text-[#FFFFFF] py-3 rounded-full shadow-md hover:bg-[#0F172A] transition-all duration-200 text-left px-4 flex items-center transform hover:scale-105"
+              className="font-bold font-roboto w-full bg-[#00537A] text-[#FFFFFF] py-3 rounded-full shadow-md hover:bg-[#0F172A] transition-all duration-200 text-left px-4 flex items-center transform hover:scale-105"
             >
               <img src={compareIcon} alt="Compare Icon" className="w-6 h-6 mr-2" />
               Banding Jurusan
             </button>
           </div>
           <div className="mt-8">
-            <h3 className="text-lg font-akhsar text-[#F5A201]">BERITA TERKINI KAMPUS</h3>
+            <h3 className="text-lg font-roboto text-[#FFFFFF] font-bold">BERITA TERKINI KAMPUS</h3>
             <p className="font-roboto text-xs text-[#FFBA42]">Cari Informasi kampus dan jurusan Impianmu!</p>
           </div>
           <div className="font-roboto mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
