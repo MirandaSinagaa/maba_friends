@@ -46,9 +46,9 @@ const SignUpScreen: React.FC = () => {
   const toggleShowConfirmPassword = () => {
     setShowConfirmPassword(!showConfirmPassword);
   };
-
+  
   return (
-    <div className="font-roboto min-h-screen flex flex-col items-center justify-center bg-[#0B1E33] text-white p-4">
+    <div className="font-roboto min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-[#013C58] to-[#0B1E33] text-white p-4">
       <h1 className="text-4xl font-righteous mb-10">Daftar Akun</h1>
       <form className="w-full max-w-xs space-y-4" onSubmit={handleRegister}>
         <div className="flex items-center bg-white rounded-full px-3 py-2 shadow-md">
