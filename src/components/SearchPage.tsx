@@ -63,7 +63,7 @@ const SearchPage: React.FC = () => {
           <div className="bg-[#00537A] text-[#FFFFFF] p-4 rounded-lg shadow-lg">
             <h1 className="text-xl font-bold font-akshar">Cari Kampus</h1>
           </div>
-          <div className="font-bold p-4">
+          <div className="p-4">
             <div className="relative mb-4">
               <FaSearch className="absolute top-3 left-3 text-[#000000]" />
               <input
