@@ -66,7 +66,7 @@ const Dashboard: React.FC = () => {
           </div>
           <div className="mt-8">
             <h3 className="text-lg font-roboto text-[#FFFFFF] font-bold">BERITA TERKINI KAMPUS</h3>
-            <p className="font-roboto text-xs text-[#FFBA42]">Cari Informasi kampus dan jurusan Impianmu!</p>
+            <p className="font-roboto text-xs text-[#FFFFFF]">Cari Informasi kampus dan jurusan Impianmu!</p>
           </div>
           <div className="font-roboto mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             <div className="bg-[#013C58] text-[#FFFFFF] p-4 rounded-lg shadow-md transform hover:scale-105 transition-all duration-300">
